@@ -16,7 +16,7 @@
 </head>
 <body>
     <!-- NAVBAR START -->
-    <nav class="navbar navbar-expand-lg navbar-dark px-2 ms-3" >
+    <nav class="navbar navbar-expand-lg navbar-dark px-2 ms-3" style="margin-top: -3%;" >
         <a class="navbar-brand d-flex ms-5" href="#">
             <img src="assets\nicktokilogo.png" alt="Logo" style="width: 70px; height: auto;" class="">
             <h3 class="ms-3" style="margin-top: 13%;">NickToki.</h3>
@@ -31,33 +31,33 @@
         <div class="collapse navbar-collapse" id="navbarContent">
 
             <ul class="navbar-nav mb-2 mb-lg-0 ms-auto mt-0">
-                <li class="nav-item fs-5 me-3 nav-mt">
-                    <a class="nav-link fw-bold mt-2 text-light" href="#">Home</a>
+                <li class="nav-item fs-4 me-5 nav-mt">
+                    <a class="nav-link fw-bold mt-2" href="#">Home</a>
                 </li>
 
-                <li class="nav-item fs-5 ms-3 me-3 nav-mt">
-                    <a class="nav-link mt-2 text-light">
+                <li class="nav-item fs-4 ms-3 me-5 nav-mt">
+                    <a class="nav-link mt-2">
                         Gallery
                     </a>
                 </li>
 
-                <li class="nav-item fs-5 ms-3 me-3 nav-mt">
-                    <a class="nav-link mt-2 text-light" href="#footer">About</a>
+                <li class="nav-item fs-4 ms-3 me-5 nav-mt">
+                    <a class="nav-link mt-2" href="#footer">About</a>
                 </li>
                 <li class="nav-ite mt-5">
-                    <a class="nav-link mt-2" href="/pages/Cart/cart.html">
-                        <img src="assets/searchbtn.png" style="width: auto; height: 10vh;">
+                    <a class="nav-link mt-4" href="/pages/Cart/cart.html">
+                        <img src="assets/searchbtn.png" style="width: auto; height: 7vh; margin-top: 13%;">
                     </a>
                 </li>
                 <li class="nav-item mt-5">
-                    <a class="nav-link mt-2" href="/pages/Cart/cart.html">
-                        <img src="assets/cartbtn.png" style="width: auto; height: 10vh;">
+                    <a class="nav-link mt-4" href="/pages/Cart/cart.html">
+                        <img src="assets/cartbtn.png" style="width: auto; height: 7vh; margin-top: 13%;">
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="../pages/Profile/profile.html">
-                        <img src="assets/signupbtn.png" style="width: auto; height: 26vh;"/>
+                        <img src="assets/signupbtn.png" style="width: auto; height: 24vh; margin-top:;"/>
                     </a>   
                 </li>
             </ul>
@@ -65,5 +65,3 @@
     </nav>  
      
     <div class="main-window">
-        
-

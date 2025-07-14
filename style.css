@@ -25,7 +25,8 @@ body {
 .main-window {
     max-width: 85vw;
     width: 100%;
-    height: 75vh;
+    height: auto;
+    overflow: visible;
     margin: -2.5% auto;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(25px);
@@ -40,4 +41,221 @@ body {
 
 .nav-mt {
     margin-top: 10vh;
+}
+
+
+/* 
+
+  ===========================================================================================   STORE CSS
+
+
+*/
+
+
+
+/*  --------------------------------------- ITEM STORE ----------------------------------------------  */
+
+.item-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px;
+    padding: 20px 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.item-boxess {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px;
+    padding: 20px 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.card {
+    width: calc(33.33% - 20px); 
+    min-width: 350px; 
+    background: linear-gradient(to bottom, #00000073 55%, #1d6485 45%);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: 0 8 ease;
+    transition: transform 0.5s ease;
+    pointer-events: auto;
+    cursor: pointer;
+}
+.card:hover {
+    transform:scale(1.02);
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 1024px) {
+    .card {
+        width: calc(50% - 2px);
+    }
+}
+@media (max-width: 768px) {
+    .card {
+        width: 100%; 
+    }
+}
+
+.main-image {
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: 0 auto;
+}
+
+.small-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.small-images img {
+    width: 30px;
+    height: 30px;
+}
+
+#small-images-hide img{
+    width: 0px;
+    height: 0px;
+    visibility: none;
+    opacity: 0;
+}
+
+.card h3 {
+    margin: 10px 0;
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #f0f0f0;
+}
+.card p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.price-button {
+    background: #d30e0e;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    padding: 10px 20px;
+    white-space: nowrap; 
+    flex-shrink: 0; 
+}
+.price-button span {
+    margin-left: 5px;
+}
+.price-button:hover {
+    background: #9a0007;
+}
+
+.card-content {
+    min-height: 100px;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
+    gap: 10px; 
+    flex-wrap: wrap; 
+}
+
+.card-content div {
+    flex: 1; 
+}
+
+.card-content button {
+    padding: 10px 30px;
+    margin: 10px 0;
+    font-size: 15px;
+}
+.mystery-box-card {
+    width: 1000px; 
+}
+
+.hidden-name {
+    display: none;
+}
+.hiddens-name {
+    display: none;
+}
+
+
+
+/*  --------------------------------------- POPUP CARD ----------------------------------------------  */
+ .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.close-modal {
+    cursor: pointer;
+    float: right;
+    font-size: 24px;
+}
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.close-modal:hover {
+    background: darkred;
+} 
+
+
+/*  --------------------------------------- POP UP / MODAL ----------------------------------------------  */
+.custom-swal-popup {
+    background: linear-gradient(to bottom, #000000c4 55%, #6a75b7 45%) !important; 
+    color: white !important; 
+    border-radius: 15px !important; 
+    padding: 20px !important; 
+}
+
+.custom-swal-popup h2 {
+    color: rgb(249, 244, 244) !important; 
+}
+
+.custom-swal-popup p {
+    color: white !important; 
 }

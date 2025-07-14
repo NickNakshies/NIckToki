@@ -32,17 +32,17 @@
 
             <ul class="navbar-nav mb-2 mb-lg-0 ms-auto mt-0">
                 <li class="nav-item fs-5 me-3 nav-mt">
-                    <a class="nav-link fw-bold mt-2" href="#">Home</a>
+                    <a class="nav-link fw-bold mt-2 text-light" href="#">Home</a>
                 </li>
 
                 <li class="nav-item fs-5 ms-3 me-3 nav-mt">
-                    <a class="nav-link mt-2">
+                    <a class="nav-link mt-2 text-light">
                         Gallery
                     </a>
                 </li>
 
                 <li class="nav-item fs-5 ms-3 me-3 nav-mt">
-                    <a class="nav-link mt-2" href="#footer">About</a>
+                    <a class="nav-link mt-2 text-light" href="#footer">About</a>
                 </li>
                 <li class="nav-ite mt-5">
                     <a class="nav-link mt-2" href="/pages/Cart/cart.html">

@@ -56,7 +56,7 @@ body {
     margin-top: 10vh;
 }
 
-/* CART CSS */
+/* ===============================================CART CSS ===============================================*/
 .product-header {
   display: flex;
   justify-content: space-between;
@@ -245,7 +245,7 @@ margin-top:-20px;
   display: none;
 }
 
-
+/* ===============================================CART CSS ===============================================*/
 /* PROFILE CSS */
 
 .profile-window::-webkit-scrollbar {

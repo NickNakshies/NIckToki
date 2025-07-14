@@ -2,60 +2,68 @@
 require 'header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Checkout - NickToki</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap">
-  <link rel="stylesheet" href="checkout.css">
-</head>
-<body>
-
+<h2>Checkout</h2>
 <div class="checkout-container">
 
   <!-- LEFT: Product Section -->
+
   <div class="product-list">
-    <h2>Checkout</h2>
+  
+  <div class="product-header">
+    <span class="product-title">Product</span>
+    <span class="product-title">Price</span>
+  </div>
 
-    <div class="product-item">
-      <div class="product-label">
-        <img src="../../assets/bluewave.png" alt="Blue Wave Build">
-        <span>Blue Wave Build</span>
-      </div>
-      <span class="price">₱34,515</span>
-    </div>
+  <?php
+  $products = []; 
 
-    <div class="product-item">
-      <div class="product-label">
-        <img src="../../assets/kmset.png" alt="KM Set">
-        <span>KM Set</span>
-      </div>
-      <span class="price">₱7,459</span>
-    </div>
+  $total = 0;
 
+  if (empty($products)) {
+    echo '<p class="empty-cart-msg">Your cart is empty.</p>';
+  } else {
+    foreach ($products as $a) {
+      echo '
+      <div class="product-item">
+        <div class="product-label">
+          <img src="assets/' . htmlspecialchars($a["img"]) . '" alt="' . htmlspecialchars($a["name"]) . '">
+          <span>' . htmlspecialchars($a["name"]) . '</span>
+        </div>
+        <span class="price">₱' . number_format($a["price"], 0) . '</span>
+      </div>';
+      $total += $a["price"];
+    }
+
+    echo '
     <div class="total-line"></div>
-
     <div class="product-item total">
       <span>Total</span>
-      <span class="price">₱41,974</span>
-    </div>
-  </div>
+      <span class="price">₱' . number_format($total, 0) . '</span>
+    </div>';
+  }
+  ?>
+</div>
 
   <!-- RIGHT: Payment Section -->
   <div class="payment-box">
-    <h2>Payment Method</h2>
-
+    <h3 class="h3">Payment Method</h3>
+    <div class="scan-accept-row">
+        
+  <div class="scan-column">
     <p class="scan-label">Click here to Scan QR</p>
-    <img src="../../assets/starscanqr.png" alt="Scan QR" class="scanqr">
+    <img src="assets/starscanqr.png" alt="Scan QR" class="scanqr">
+  </div>
 
+  <div class="accept-column">
     <p class="accept-text">We only accept:</p>
+    <img src="assets/qrph.png" alt="QR Ph" class="qrph-logo">
     <div class="logos">
-      <img src="../../assets/qrph.png" alt="QR Ph">
-      <img src="../../assets/gcash.png" alt="GCash">
-      <img src="../../assets/maya.png" alt="Maya">
-      <img src="../../assets/bdo.png" alt="BDO">
+      <img src="assets/gcash.png" alt="GCash">
+      <img src="assets/maya.png" alt="Maya">
+      <img src="assets/bdo.png" alt="BDO">
     </div>
+  </div>
+</div>
 
     <div class="upload-section">
       <p>Upload Receipt</p>
@@ -66,15 +74,6 @@ require 'header.php';
   </div>
 
 </div>
-
-<!-- Footer -->
-<div class="footer-note">
-  No copyright infringement intended. <br>
-  For educational purposes only.
-</div>
-
-</body>
-</html>
 
 <?php
 require 'footer.php';

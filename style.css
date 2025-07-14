@@ -25,7 +25,7 @@ body {
 .main-window {
     max-width: 85vw;
     width: 100%;
-    height: 75vh;
+    height: auto;
     margin: -2.5% auto;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(25px);
@@ -40,4 +40,177 @@ body {
 
 .nav-mt {
     margin-top: 10vh;
+}
+
+/* CART CSS */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.product-title {
+  flex: 1;
+  text-align: left;
+  font-size: 20px;;
+}
+
+.product-title:last-child {
+  text-align: right;
+}
+
+.empty-cart-msg {
+  text-align: center;
+  font-style: italic;
+  color: #ccc;
+  margin-top: 30px;
+}
+
+.checkout-container {
+  max-width: 1500px;
+  margin: 60px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.product-list, .payment-box {
+    height:auto;
+background: rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  padding: 30px;
+  flex: 1;
+}
+
+h2 {
+  font-size: 50px;
+  margin-top: 70px;
+  margin-left: 40px;
+  margin-bottom: -50px;
+  color: #ffffff;
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.product-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.h3{
+   text-align: center; 
+   color:#ffffff;
+}
+
+.product-label img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.total-line {
+  border-top: 1px solid rgba(255,255,255,0.3);
+  margin: 20px 0;
+}
+
+.total {
+  font-size: 18px;
+}
+
+.scan-accept-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 70px;
+}
+
+.scan-label {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.accept.text {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.scan-column, .accept-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.scanqr {
+  height:200px;
+  width:auto;
+  margin-top:-50px;
+}
+
+.accept-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qrph-logo {
+  height: 200px;
+  width:auto;
+  margin-bottom: -50px;
+  margin-top: -80px;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  gap: 1px; 
+  flex-wrap: nowrap; 
+  max-width: 400px; 
+}
+
+.logos img {
+  height: 100px;
+  width: auto;
+  margin: 0;
+  display: block; 
+}
+
+.upload-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #ffffff10;
+  border: 1px dashed white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.upload-btn:hover {
+  background: #ffffff20;
+}
+
+.upload-section input[type="file"] {
+  display: none;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 12px;
+  opacity: 0.7;
 }

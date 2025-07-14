@@ -3,7 +3,7 @@ require 'header.php';
 ?>
 
 <!--Profile-->
-        <div class="p-4 mt-1 row">
+        <div class="p-4 mt-1 row ms-4">
             <h2 class="fw-bold fs-1" style="color: #d9d9d9;">Profile</h2>
         </div>
         <div class="row p-1 ms-4">
@@ -19,6 +19,7 @@ require 'header.php';
             </div>
             <div class="col-md-5 fw-bold fs-4 mt-3 ms-5 me-3 username-fade">
                 <strong class="me-3">User ID:</strong><span id="playerID"></span><br>
+                <strong class="me-3">Joined:</strong><span id="joinDate"></span>
             </div>
         </div>
         <div class="row p-4 mt-1 ms-4 fw-bold fs-4 pb-5">
@@ -74,6 +75,18 @@ require 'header.php';
             </form>
         </div>  
 
+
+        <script>
+                  function loadFile(event) {
+            event.preventDefault();
+            let reader = new FileReader();
+            reader.onload = function() {
+                let profileImage = reader.result;
+                document.getElementById("set-pic").style.backgroundImage = `url('${profileImage}')`;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+        </script>
 <?php
 require 'footer.php';
 ?>

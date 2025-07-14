@@ -33,28 +33,27 @@ require 'header.php';
                 <div class="row">
                     <div class="col">
                         <label style="color: #d9d9d9;">User Name</label><br>
-                        <input type="text" id="name" class="form-control" placeholder="Name" required style="width: 82%;"><br>
+                        <input type="text" id="" class="form-control" placeholder="Name" required style="width: 82%;"><br>
                     </div>
                     <div class="col">
                         <label class="fw-bold" style="color: #d9d9d9;">Password</label>
                         <div class="input-group" style="width: 75%;">
-                            <input type="password" class="form-control" id="password" placeholder="Password" required>
+                            <input type="password" class="form-control" id="" placeholder="Password" required>
                             <button class="btn btn-outline-light" type="button" id="togglePassword">
                                 <i class="bi bi-eye"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                <form id="formValidate">
                     <div class="row">
                         <div class="col">
                             <label style="color: #d9d9d9;">Email Address</label><br>
-                            <input type="email" class="form-control" id="email" placeholder="Email Address" required style = "width: 82%">
+                            <input type="email" class="form-control" id="" placeholder="Email Address" required style = "width: 82%">
                         </div>
                         <div class="col">
                             <label class="fw-bold" style="color: #d9d9d9;">Delivery Address</label>
                             <div class="input-group" style="width: 75%;">
-                            <input type="password" class="form-control" id="password" placeholder="Address" required>
+                            <input type="text" class="form-control" id="" placeholder="Address" required>
                             <button class="btn btn-outline-light" type="button" id="togglePassword">
                                 Edit
                             </button>
@@ -69,7 +68,7 @@ require 'header.php';
                         <a href="/pages/Sign_In_Up/signin.html" id="logout-btn" class="text-primary profile-link" ><i class="bi bi-power me-3"></i>Log Out</a>
                     </div>    
                     <div class="col offset-lg-6">
-                        <button type="submit" class="btn ms-3 rounded-pill bg-primary text-light fs-5 px-4 py-3 fw-bold shadow-lg viewOrder" onclick="saveUserData()"><i class="bi bi-floppy me-2"></i> Save Settings</button>
+                        <button type="submit" class="btn ms-3 rounded-pill bg-primary text-light fs-5 px-4 py-3 fw-bold shadow-lg viewOrder" onclick=""><i class="bi bi-floppy me-2"></i> Save Settings</button>
                     </div>       
                 </div>
             </form>

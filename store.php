@@ -7,8 +7,11 @@ require 'header.php';
         
 <!-- SEPERATE TS -->
 <div class="label-name-1">
-    <h1>Item Boxes</h1>
+    <h1 class="fs-1 ">Bundle Sets</h1>
 </div>
+
+
+
             
 <!-- ITEM BOXES -->
 <section class="item-boxes" id="item-boxes">
@@ -17,25 +20,54 @@ require 'header.php';
     <div class="card" id="item-1">
         <img class="main-image" src="./assets/card1.png" alt="Main Item Box">
         
+        <!-- Hidden description for Blue Wave Build -->
+        <div class="item-description" style="display: none;">
+            <h3>Blue Wave Build</h3>
+            <ul>
+               <p>Specification </p>               
+                <li>AMD Ryzen 5 5600X</li>
+                <li>Deepcool AK400 ZERO DARK PLUS (WHITE)</li>
+                <li>ASUS Prime B550M-A WiFi II</li>
+                <li>AMD Radeon RX 6600 8GB (WHITE)</li>
+                <li>T-Force Delta RGB 16GB (2 x 8GB) DDR4 3200MHz CL16 (WHITE)</li>
+                <li>Lexar NM620 1TB NVMe SSD</li>
+                <li>Cooler Master MWE 600W 80 Plus Bronze</li>
+                <li>Montech AIR 100 ARGB (WHITE)</li>
+                <li>2-3 additional ARGB fans</li>
+            </ul>
+        </div>
+        
         <div class="card-content">
             <div>
                 <h3>Blue Wave Build</h3>
-                <p>Can only be purchased 1 time</p>
+        
             </div>
-            <button class="price-button">₱ <span>34, 515</span></button>
+            <button class="price-button">₱ <span>46,515</span></button>
         </div>
     </div>
 
     <!-- Item 2 -->
     <div class="card scroll-offset" id="item-2">
-        <img class="main-image" src="./assets/card2.png" alt="Main Item Box">
+        <img class="main-image" src="./assets/card2 (1).png" alt="Main Item Box">
+        
+        <!-- Hidden description for Mobo Combo -->
+        <div class="item-description" style="display: none;">
+            <h3>Mobo Combo</h3>
+            <ul>
+               <p>Specification </p>               
+                <li>ASUS ROG Strix </li>
+                <li>AMD Ryzen 7 5800X</li>
+                <li>NVIDIA GeForce GTX 1080 Ti</li>
+
+            </ul>
+        </div>
     
         <div class="card-content">
             <div>
                 <h3>Mobo Combo</h3>
-                <p>Can only be purchased 1 time</p>
+                
             </div>
-            <button class="price-button">₱ <span>14, 500</span></button>
+            <button class="price-button">₱ <span>14,500</span></button>
         </div>
     </div>
 
@@ -43,12 +75,23 @@ require 'header.php';
     <div class="card" id="item-3">
         <img class="main-image" src="./assets/card3.png" alt="Main Item Box">
         
+        <!-- Hidden description for KM Set -->
+        <div class="item-description" style="display: none;">
+            <h3>KM Set</h3>
+            <ul>
+              <p>Specification </p>
+                <li>Royal Kludge 84 Keyboard</li>
+                <li>Logitech G Pro X Superlight (White)</li>
+   
+            </ul>
+        </div>
+        
         <div class="card-content">
             <div>
                 <h3>KM Set</h3>
-                <p>Can only be purchased 3 times</p>
+               
             </div>
-            <button class="price-button">₱ <span>7, 459</span></button>
+            <button class="price-button">₱ <span>7,459</span></button>
         </div>
     </div>
 
@@ -56,26 +99,51 @@ require 'header.php';
     <div class="card" id="item-4">
         <img class="main-image" src="./assets/card4.png" alt="Main Item Box">
         
+        <!-- Hidden description for Store It Bundle -->
+        <div class="item-description" style="display: none;">
+            <h3>Store It Bundle</h3>
+            <ul>
+                <p>Specification </p>
+                <li>Team Group 1TB SSD</li> 
+                <li>HyperX Fury 2x16 GB RAM</li>
+            </ul>
+
+        </div>
+        
         <div class="card-content">
             <div>
                 <h3>Store It Bundle</h3>
-                <p>Can only be purchased 3 times</p>
+               
             </div>
-            <button class="price-button">₱ <span>8, 500</span></button>
+            <button class="price-button">₱ <span>8,500</span></button>
         </div>
     </div>
 
     <!-- Item 5 -->
     <div class="card" id="item-5">
         <img class="main-image" src="./assets/card5.png" alt="Main Item Box">
+        
+        <!-- Hidden description for The Ultimate -->
+        <div class="item-description" style="display: none;">
+            <h3>The Ultimate</h3>
+            <ul>
+               <p>Specification </p>               
+            <li>Intel Core i7-14700K</li>
+            <li>ASUS ROG Strix Z790-E Gaming WiFi</li>
+            <li>Lian Li Galahad AIO 360mm</li>
+            <li>Corsair Vengeance RGB DDR5 32GB (2x16GB) 6000MHz</li>
+            <li>Nvidia GeForce RTX 4070 Ti SUPER</li>
+            <li>Samsung 990 Pro SSD 2TB</li>
+            <li>Corsair RMx Shift 850W 80 Plus Gold</li>
+            <li>Lian Li O11 Dynamic EVO (White)</li>
+            </ul>
+        </div>
        
         <div class="card-content">
             <div>
                 <h3>The Ultimate</h3>
-                <p><br></p>
-                <br>
             </div>
-            <button class="price-button">₱ <span>145, 892</span></button>
+            <button class="price-button">₱ <span>145,892</span></button>
         </div>
     </div>
 
@@ -84,6 +152,7 @@ require 'header.php';
 <?php
 require 'footer.php';
 ?>
+
 
 <script>
 let scrollY = 0; // Store scroll position globally
@@ -101,6 +170,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const itemDescription = this.querySelector("p")?.textContent || "No description available.";
             const itemPrice = this.querySelector(".price-button span")?.textContent || "0.00";
             const itemId = this.id;
+
+            // Get the item description
+            const descriptionElement = this.querySelector(".item-description");
+            const descriptionHTML = descriptionElement ? descriptionElement.innerHTML : "<p>No specifications available.</p>";
 
             console.log("Item Clicked:", {imageSrc, itemName, itemDescription, itemPrice, itemId });
 
@@ -148,25 +221,45 @@ document.addEventListener("DOMContentLoaded", function () {
                 extraNameHTML = `<p style="display: block; color: blue; font-weight: bold; text-align: center; margin-bottom: 30px; margin-top:20px;">${extraName}</p>`;
             }
 
-            // Show SweetAlert modal
+            // Show SweetAlert modal with exact styling from image
             Swal.fire({
                 title: itemName,
                 html: `
-                    <img src="${imageSrc}" alt="${itemName}" style="width: 100%; max-width: 250px; border-radius: 10px; margin-bottom: 120px;">
-                    <h3 style="color: #fdffd6; font-weight:bold">₱ ${itemPrice}</h3>
+                    <div style="display: flex; gap: 30px; align-items: flex-start; margin-bottom: 30px;">
+                        <div style="flex: 1; text-align: center;">
+                            <img src="${imageSrc}" alt="${itemName}" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
+                        </div>
+                        <div style="flex: 2; text-align: left;">
+                            <h2 style="color: white; font-size: 48px; font-weight: bold; margin: 0 0 20px 0; line-height: 1.1;">${itemName}</h2>
+                            <h3 style="color: white; font-size: 32px; font-weight: bold; margin: 0 0 30px 0;">₱${itemPrice}</h3>
+                            <div style="color: white; font-size: 16px; line-height: 1.5;">
+                                ${descriptionHTML}
+                            </div>
+                        </div>
+                    </div>
                     ${extraNameHTML}
-                    <div style="display: flex; justify-content: center; flex-wrap: wrap;">${smallImagesHTML}</div>
-                    <button id="add-to-cart-btn" class="swal2-confirm swal2-styled" 
-                        style="background: #d30e0e; border-radius: 30px; padding: 10px 20px; font-size: 16px; margin-top: 15px;">
-                        Add to Cart
-                    </button>
+                    <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">${smallImagesHTML}</div>
+                    <div style="display: flex; gap: 20px; justify-content: center;">
+                        <button id="add-to-cart-btn" 
+                            style="background: #24709f; color: white; border: none; border-radius: 25px; padding: 15px 30px; font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">
+                            Add to Cart
+                        </button>
+                        <button id="purchase-now-btn" 
+                            style="background: #84579c; color: white; border: none; border-radius: 25px; padding: 15px 30px; font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">
+                            Purchase Now
+                        </button>
+                    </div>
                 `,
                 showConfirmButton: false,
                 showCloseButton: true,
                 position: "center",
                 backdrop: true,
-                customClass: { popup: "custom-swal-popup" },
+                width: '800px',
+                customClass: { 
+                    popup: "custom-swal-popup-exact"
+                },
                 didOpen: () => {
+                    // Add to Cart button functionality
                     document.querySelector("#add-to-cart-btn").addEventListener("click", function () {
                         addToCart(itemName, imageSrc, itemPrice);
                         Swal.close();
@@ -177,11 +270,55 @@ document.addEventListener("DOMContentLoaded", function () {
                                 text: `${itemName} has been added to your cart.`,
                                 icon: "success",
                                 confirmButtonText: "OK",
-                                confirmButtonColor: "#d30e0e"
+                                confirmButtonColor: "#0003c1ff"
                             }).then(() => {
                                 restoreScroll();
                             });
                         }, 200);
+                    });
+
+                    // Purchase Now button functionality
+                    document.querySelector("#purchase-now-btn").addEventListener("click", function () {
+                        // Add your purchase logic here
+                        Swal.close();
+                        
+                        setTimeout(() => {
+                            Swal.fire({
+                                title: "Redirecting to Checkout...",
+                                text: `Processing purchase for ${itemName}`,
+                                icon: "info",
+                                confirmButtonText: "OK",
+                                confirmButtonColor: "#8b5cf6"
+                            }).then(() => {
+                                restoreScroll();
+                                // Add redirect to checkout page here
+                                // window.location.href = '/checkout';
+                            });
+                        }, 200);
+                    });
+
+                    // Hover effects for buttons
+                    const addToCartBtn = document.querySelector("#add-to-cart-btn");
+                    const purchaseBtn = document.querySelector("#purchase-now-btn");
+                    
+                    addToCartBtn.addEventListener("mouseenter", function() {
+                        this.style.background = "#4f46e5";
+                        this.style.transform = "scale(1.05)";
+                    });
+                    
+                    addToCartBtn.addEventListener("mouseleave", function() {
+                        this.style.background = "#6366f1";
+                        this.style.transform = "scale(1)";
+                    });
+                    
+                    purchaseBtn.addEventListener("mouseenter", function() {
+                        this.style.background = "#7c3aed";
+                        this.style.transform = "scale(1.05)";
+                    });
+                    
+                    purchaseBtn.addEventListener("mouseleave", function() {
+                        this.style.background = "#8b5cf6";
+                        this.style.transform = "scale(1)";
                     });
                 },
                 willClose: () => {

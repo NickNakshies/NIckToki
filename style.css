@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'AgrandirRegular';
     src: url('assets/Agrandir - Free for Personal Use/Agrandir-Regular.otf') format('opentype');
@@ -40,18 +41,20 @@ body {
 }
 
 .nav-mt {
-    margin-top: -2vh;
+    margin-top: 10vh;
 }
 
 
+
+
+
+
+
+
+
 /* 
-
   ===========================================================================================   STORE CSS
-
-
 */
-
-
 
 /*  --------------------------------------- ITEM STORE ----------------------------------------------  */
 
@@ -64,6 +67,7 @@ body {
     max-width: 1300px;
     margin: 0 auto;
 }
+
 .item-boxess {
     display: flex;
     flex-wrap: wrap;
@@ -77,7 +81,7 @@ body {
 .card {
     width: calc(33.33% - 20px); 
     min-width: 350px; 
-    background: linear-gradient(to bottom, #00000073 55%, #1d6485 45%);
+    background: linear-gradient(to bottom, #00000073 70%, #1d6485 30%);
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 25px;
@@ -91,46 +95,47 @@ body {
     pointer-events: auto;
     cursor: pointer;
 }
+
 .card:hover {
-    transform:scale(1.02);
+    transform: scale(1.02);
     box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.2);
 }
-
 
 @media (max-width: 1024px) {
     .card {
         width: calc(50% - 2px);
     }
 }
+
 @media (max-width: 768px) {
     .card {
         width: 100%; 
     }
 }
 
+
+/* IMAGES */
 .main-image {
-    width: 120px;
-    height: 120px;
+    
+    width: 180px;
+    height: 180px;
     display: block;
     margin: 0 auto;
+    transform: scale(1.7);
+    margin-top: -2rem;
+
 }
 
-.small-images {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-.small-images img {
-    width: 30px;
-    height: 30px;
-}
 
-#small-images-hide img{
-    width: 0px;
-    height: 0px;
-    visibility: none;
-    opacity: 0;
+.label-name-1 {
+    height: auto;
+    padding-top: 2rem;
+    padding-left: 5rem;
+    color: hsl(0, 100%, 100%);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    transform: scale(1.5);
+    margin-left: 17%;
 }
 
 .card h3 {
@@ -140,6 +145,7 @@ body {
     font-weight: 800;
     color: #f0f0f0;
 }
+
 .card p {
     font-size: 16px;
     font-weight: 500;
@@ -147,7 +153,7 @@ body {
 }
 
 .price-button {
-    background: #d30e0e;
+    background: #6a78ba;
     color: white;
     border: none;
     border-radius: 20px;
@@ -159,34 +165,35 @@ body {
     white-space: nowrap; 
     flex-shrink: 0; 
 }
+
 .price-button span {
     margin-left: 5px;
 }
+
 .price-button:hover {
-    background: #9a0007;
+    background: #404974;
 }
 
 .card-content {
-    min-height: 100px;
-    margin-top: 2rem;
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: space-between;
     width: 100%;
-    text-align: left;
-    gap: 10px; 
-    flex-wrap: wrap; 
+    gap: 20px;
+    margin-top: 2rem;
 }
 
 .card-content div {
-    flex: 1; 
+    flex: 1;
 }
 
 .card-content button {
-    padding: 10px 30px;
-    margin: 10px 0;
-    font-size: 15px;
+    flex-shrink: 0;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
 }
+
 .mystery-box-card {
     width: 1000px; 
 }
@@ -194,14 +201,13 @@ body {
 .hidden-name {
     display: none;
 }
+
 .hiddens-name {
     display: none;
 }
 
-
-
 /*  --------------------------------------- POPUP CARD ----------------------------------------------  */
- .modal {
+.modal {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -227,6 +233,7 @@ body {
     float: right;
     font-size: 24px;
 }
+
 .close-modal {
     position: absolute;
     top: 10px;
@@ -239,12 +246,121 @@ body {
     cursor: pointer;
     border-radius: 50%;
 }
+
 .close-modal:hover {
     background: darkred;
 } 
 
+/*  --------------------------------------- EXACT MODAL STYLING ----------------------------------------------  */
+.custom-swal-popup-exact {
+    background: linear-gradient(135deg, #000000 0%, #000000c3 50%, #000000 100%) !important;
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 40px !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+    max-width: 800px !important;
+    width: 90% !important;
+}
 
-/*  --------------------------------------- POP UP / MODAL ----------------------------------------------  */
+.custom-swal-popup-exact .swal2-title {
+    display: none !important;
+}
+
+.custom-swal-popup-exact .swal2-html-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: white !important;
+}
+
+.custom-swal-popup-exact .swal2-html-container h2 {
+    color: white !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+    text-align: left !important;
+}
+
+.custom-swal-popup-exact .swal2-html-container h3 {
+    color: white !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+    text-align: left !important;
+}
+
+.custom-swal-popup-exact .swal2-html-container ul {
+    list-style: disc !important;
+    padding-left: 20px !important;
+    margin: 10px 0 !important;
+    color: white !important;
+    text-align: left !important;
+}
+
+.custom-swal-popup-exact .swal2-html-container li {
+    color: white !important;
+    margin: 5px 0 !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+}
+
+.custom-swal-popup-exact .swal2-close {
+    color: white !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    background: none !important;
+    border: none !important;
+    padding: 10px !important;
+    top: 20px !important;
+    right: 20px !important;
+}
+
+.custom-swal-popup-exact .swal2-close:hover {
+    color: #e5e7eb !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 50% !important;
+}
+
+/* Responsive design for modal */
+@media (max-width: 768px) {
+    .custom-swal-popup-exact {
+        width: 95% !important;
+        padding: 20px !important;
+    }
+    
+    .custom-swal-popup-exact .swal2-html-container > div:first-child {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .custom-swal-popup-exact .swal2-html-container h2 {
+        font-size: 32px !important;
+        text-align: center !important;
+    }
+    
+    .custom-swal-popup-exact .swal2-html-container h3 {
+        font-size: 24px !important;
+        text-align: center !important;
+    }
+    
+    .custom-swal-popup-exact .swal2-html-container > div:last-child {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+}
+
+/* Button hover animations */
+.custom-swal-popup-exact button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.custom-swal-popup-exact button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+.custom-swal-popup-exact button:active {
+    transform: translateY(0) !important;
+}
+
+/*  --------------------------------------- OLD MODAL STYLING (BACKUP) ----------------------------------------------  */
 .custom-swal-popup {
     background: linear-gradient(to bottom, #000000c4 55%, #6a75b7 45%) !important; 
     color: white !important; 

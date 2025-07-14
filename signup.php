@@ -2,16 +2,7 @@
 require 'header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="signupdesign.css">
-</head>
-
-<body>
 
     <!-- SIGN UP TITLE -->
     <div>
@@ -27,8 +18,9 @@ require 'header.php';
 
                 <!-- NAME FORM -->
                 <label for="full-name" class="form-label">
-                    Full Name*
-                </label> 
+                    Full Name<span class="asterisk">*</span>
+                </label>
+
 
                 <div class="signup-input"> 
                     <input type="text" class="form-input" id="full-name" placeholder=" " required>
@@ -39,7 +31,7 @@ require 'header.php';
             <!-- EMAIL FORM -->
             <div class="signup-info">
                 <label for="email" class="form-label">
-                    Email*
+                    Email<span class="asterisk">*</span>
                 </label>
 
                 <div class="signup-input">
@@ -51,7 +43,7 @@ require 'header.php';
             <!-- PASSWORD FORM -->
             <div class="signup-info">
                 <label for="password" class="form-label">
-                    Password*
+                    Password<span class="asterisk">*</span>
                 </label>
 
                 <div class="signup-input">
@@ -78,9 +70,6 @@ require 'header.php';
             </div>
         </form>
     </div>
-
-</body>
-</html>
 
 <?php
 require 'footer.php';

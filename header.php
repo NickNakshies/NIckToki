@@ -12,6 +12,7 @@
 
     <!-- Styles natin -->
      <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
     
 </head>
 <body>

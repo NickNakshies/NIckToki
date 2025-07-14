@@ -36,7 +36,7 @@ require 'header.php';
 
     <div class="qr-section">
       <p>Click here to Scan QR</p>
-      <img src="../../assets/qrph-icon.png" alt="QR Ph">
+      <img src="../../assets/qrph.png" alt="QR Ph">
       <p class="accepted-payments">We only accept<br><strong style="color: #f5ea0a;">● QR Ph</strong></p>
     </div>
 

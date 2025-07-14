@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'AgrandirRegular';
     src: url('assets/Agrandir - Free for Personal Use/Agrandir-Regular.otf') format('opentype');
@@ -125,13 +124,13 @@ form input[type="file"] {
 
 
 /* SIGN UP CSS - CLA */
-#signup-title{
-   color: white;
-   text-shadow:
-    0 0 1px white,
-    0 0 2px white,
-    0 0 8px white,
-    0 0 20px white;
+#signup-title {
+    color: white;
+    text-shadow:
+        0 0 1px white,
+        0 0 2px white,
+        0 0 8px white,
+        0 0 20px white;
     text-align: center;
     width: auto;
     margin-top: 3%;
@@ -145,17 +144,17 @@ form input[type="file"] {
 /* FORM STYLES */
 
 .asterisk {
-  color: #00ffba;
+    color: #00ffba;
 }
 
 .signup-info {
-  width: 500px; 
-  /* max-width: 400px; */  
-  margin: 0 auto;     
+    width: 500px;
+    /* max-width: 400px; */
+    margin: 0 auto;
 }
 
 
-.form-label{
+.form-label {
     color: white;
     font-size: 120%;
     text-align: center;
@@ -164,14 +163,14 @@ form input[type="file"] {
 
 
 #signup-input {
-    color: #d6c1ff; 
+    color: #d6c1ff;
 }
 
 .form-input {
     width: 100%;
     height: 40px;
-    border: none;                    
-    outline: none;                   
+    border: none;
+    outline: none;
     border-radius: 18px;
     padding: 10px;
     margin-bottom: 2%;
@@ -183,52 +182,56 @@ form input[type="file"] {
 
 
 .form-input:focus {
-    border: 2px solid #d6c1ffaa;         
+    border: 2px solid #d6c1ffaa;
     background-color: #d6c1ffaa;
     outline: none;
 }
 
 .submit-button {
-  text-align: center;
-  margin-top: 1.5%;
-  font-weight: 2000;
+    text-align: center;
+    margin-top: 1.5%;
+    font-weight: 2000;
 }
 
 #form-submit {
-  letter-spacing: 1px;
-  width: 16%;           /* reduced from 17% */
-  height: 90%;          /* reduced from 100% */
-  padding: 10px 32px;   /* reduced padding */
-  border-radius: 30px;
-  background-color: #f87aff65;
-  color: white;
-  border: none;
-  font-weight: bolder;
-  font-size: 20px;      /* reduced font size */
-  cursor: pointer;
-  transition: 0.3s ease;
+    letter-spacing: 1px;
+    width: 16%;
+    /* reduced from 17% */
+    height: 90%;
+    /* reduced from 100% */
+    padding: 10px 32px;
+    /* reduced padding */
+    border-radius: 30px;
+    background-color: #f87aff65;
+    color: white;
+    border: none;
+    font-weight: bolder;
+    font-size: 20px;
+    /* reduced font size */
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 #form-submit:hover {
-  background-color: #bba3f2;
-  color: white;
-  box-shadow: 0 0 10px #bba3f2;
+    background-color: #bba3f2;
+    color: white;
+    box-shadow: 0 0 10px #bba3f2;
 }
 
 /* SIGN IN CSS - CLA */
 .signin-info {
-  font-size: 130%;
-  width: 500px; 
-  /* max-width: 400px; */  
-  margin: 0 auto;  
-  margin-top: 0.5%;   
+    font-size: 130%;
+    width: 500px;
+    /* max-width: 400px; */
+    margin: 0 auto;
+    margin-top: 0.5%;
 }
 
 .form-input2 {
     width: 100%;
     height: 55px;
-    border: none;                    
-    outline: none;                   
+    border: none;
+    outline: none;
     border-radius: 30px;
     padding: 10px;
     margin-bottom: 2%;
@@ -240,36 +243,36 @@ form input[type="file"] {
 
 
 .form-input2:focus {
-    border: 2px solid #d6c1ffaa;         
+    border: 2px solid #d6c1ffaa;
     background-color: #d6c1ffaa;
     outline: none;
 }
 
 .submit-button2 {
-  text-align: center;
-  margin-top: 2%;
-  font-weight: bolder;
+    text-align: center;
+    margin-top: 2%;
+    font-weight: bolder;
 }
 
 #form-submit2 {
-  letter-spacing: 1px;
-  width: 11%;          
-  height: 100%;          
-  padding: 10px 30px;   
-  border-radius: 30px;
-  background-color: #f87aff65;
-  color: white;
-  border: none;
-  font-weight: bolder;
-  font-size: 20px;      
-  cursor: pointer;
-  transition: 0.3s ease;
+    letter-spacing: 1px;
+    width: 11%;
+    height: 100%;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background-color: #f87aff65;
+    color: white;
+    border: none;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 #form-submit2:hover {
-  background-color: #bba3f2;
-  color: white;
-  box-shadow: 0 0 10px #bba3f2;
+    background-color: #bba3f2;
+    color: white;
+    box-shadow: 0 0 10px #bba3f2;
 }
 
 .create-account {
@@ -281,25 +284,19 @@ form input[type="file"] {
 }
 
 .create-account a {
-  color: #b1efff; /* or any color you like */
-  text-decoration: underline; 
-  font-weight: bold;     /* optional */
-  transition: color 0.3s ease;
+    color: #b1efff;
+    /* or any color you like */
+    text-decoration: underline;
+    font-weight: bold;
+    /* optional */
+    transition: color 0.3s ease;
 }
 
 .create-account a:hover {
-  color: #56747b; /* hover color */
-  text-decoration: underline; 
+    color: #56747b;
+    /* hover color */
+    text-decoration: underline;
 }
-
-    margin-top: 10vh;
-}
-
-
-
-
-
-
 
 
 
@@ -312,7 +309,7 @@ form input[type="file"] {
 .item-boxes {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: center;
     gap: 20px;
     padding: 20px 80px;
     max-width: 1300px;
@@ -322,7 +319,7 @@ form input[type="file"] {
 .item-boxess {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: center;
     gap: 20px;
     padding: 20px 80px;
     max-width: 1300px;
@@ -330,8 +327,8 @@ form input[type="file"] {
 }
 
 .card {
-    width: calc(33.33% - 20px); 
-    min-width: 350px; 
+    width: calc(33.33% - 20px);
+    min-width: 350px;
     background: linear-gradient(to bottom, #00000073 70%, #1d6485 30%);
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -360,14 +357,14 @@ form input[type="file"] {
 
 @media (max-width: 768px) {
     .card {
-        width: 100%; 
+        width: 100%;
     }
 }
 
 
 /* IMAGES */
 .main-image {
-    
+
     width: 180px;
     height: 180px;
     display: block;
@@ -413,8 +410,8 @@ form input[type="file"] {
     cursor: pointer;
     transition: background 0.3s ease;
     padding: 10px 20px;
-    white-space: nowrap; 
-    flex-shrink: 0; 
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .price-button span {
@@ -446,7 +443,7 @@ form input[type="file"] {
 }
 
 .mystery-box-card {
-    width: 1000px; 
+    width: 1000px;
 }
 
 .hidden-name {
@@ -500,7 +497,7 @@ form input[type="file"] {
 
 .close-modal:hover {
     background: darkred;
-} 
+}
 
 /*  --------------------------------------- EXACT MODAL STYLING ----------------------------------------------  */
 .custom-swal-popup-exact {
@@ -575,23 +572,23 @@ form input[type="file"] {
         width: 95% !important;
         padding: 20px !important;
     }
-    
-    .custom-swal-popup-exact .swal2-html-container > div:first-child {
+
+    .custom-swal-popup-exact .swal2-html-container>div:first-child {
         flex-direction: column !important;
         gap: 20px !important;
     }
-    
+
     .custom-swal-popup-exact .swal2-html-container h2 {
         font-size: 32px !important;
         text-align: center !important;
     }
-    
+
     .custom-swal-popup-exact .swal2-html-container h3 {
         font-size: 24px !important;
         text-align: center !important;
     }
-    
-    .custom-swal-popup-exact .swal2-html-container > div:last-child {
+
+    .custom-swal-popup-exact .swal2-html-container>div:last-child {
         flex-direction: column !important;
         gap: 15px !important;
     }
@@ -613,16 +610,16 @@ form input[type="file"] {
 
 /*  --------------------------------------- OLD MODAL STYLING (BACKUP) ----------------------------------------------  */
 .custom-swal-popup {
-    background: linear-gradient(to bottom, #000000c4 55%, #6a75b7 45%) !important; 
-    color: white !important; 
-    border-radius: 15px !important; 
-    padding: 20px !important; 
+    background: linear-gradient(to bottom, #000000c4 55%, #6a75b7 45%) !important;
+    color: white !important;
+    border-radius: 15px !important;
+    padding: 20px !important;
 }
 
 .custom-swal-popup h2 {
-    color: rgb(249, 244, 244) !important; 
+    color: rgb(249, 244, 244) !important;
 }
 
 .custom-swal-popup p {
-    color: white !important; 
+    color: white !important;
 }

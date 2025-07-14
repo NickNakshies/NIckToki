@@ -31,33 +31,33 @@
         <div class="collapse navbar-collapse" id="navbarContent">
 
             <ul class="navbar-nav mb-2 mb-lg-0 ms-auto mt-0">
-                <li class="nav-item fs-5 me-5 nav-mt">
+                <li class="nav-item fs-4 me-5 nav-mt">
                     <a class="nav-link fw-bold mt-2" href="#">Home</a>
                 </li>
 
-                <li class="nav-item fs-5 ms-3 me-5 nav-mt">
+                <li class="nav-item fs-4 ms-3 me-5 nav-mt">
                     <a class="nav-link mt-2">
                         Gallery
                     </a>
                 </li>
 
-                <li class="nav-item fs-5 ms-3 me-5 nav-mt">
+                <li class="nav-item fs-4 ms-3 me-5 nav-mt">
                     <a class="nav-link mt-2" href="#footer">About</a>
                 </li>
                 <li class="nav-ite mt-5">
                     <a class="nav-link mt-4" href="/pages/Cart/cart.html">
-                        <img src="assets/searchbtn.png" style="width: auto; height: 8vh;">
+                        <img src="assets/searchbtn.png" style="width: auto; height: 7vh; margin-top: 13%;">
                     </a>
                 </li>
                 <li class="nav-item mt-5">
                     <a class="nav-link mt-4" href="/pages/Cart/cart.html">
-                        <img src="assets/cartbtn.png" style="width: auto; height: 8vh;">
+                        <img src="assets/cartbtn.png" style="width: auto; height: 7vh; margin-top: 13%;">
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="../pages/Profile/profile.html">
-                        <img src="assets/signupbtn.png" style="width: auto; height: 26vh; margin-top: -3%;"/>
+                        <img src="assets/signupbtn.png" style="width: auto; height: 24vh; margin-top:;"/>
                     </a>   
                 </li>
             </ul>

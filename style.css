@@ -13,6 +13,20 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'AgrandirThin';
+    src: url('assets/Agrandir - Free For Personal Use/Agrandir-TextBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'AgrandirThin';
+    src: url('assets/Agrandir - Free For Personal Use/Agrandir-GrandHeavy.otf') format('opentype');
+    font-weight: bolder;
+    font-style: normal
+}
+
 body {
     font-family: 'AgrandirRegular', sans-serif;
     background-image: url(assets/background.png);
@@ -26,6 +40,7 @@ body {
 .main-window {
     max-width: 85vw;
     width: 100%;
+    height: auto;
     height: auto;
     overflow: visible;
     margin: -2.5% auto;
@@ -41,6 +56,242 @@ body {
 }
 
 .nav-mt {
+    margin-top: 10vh;
+}
+
+/* PROFILE CSS */
+
+.profile-window::-webkit-scrollbar {
+    display: none;
+}
+
+.profile-link {
+    color: #d9d9d9;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.profile-link:hover {
+    opacity: 0.5;
+}
+
+.username-fade {
+    color: rgba(255, 255, 255, 0.562)
+}
+
+.viewOrder {
+    transition: 0.3s ease;
+}
+
+.viewOrder:hover {
+    transform: scale(1.1)
+}
+
+/* Profile Picture */
+.profile-pic {
+    border-radius: 50%;
+    height: 185px;
+    width: 185px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    vertical-align: middle;
+    text-align: center;
+    color: transparent;
+    transition: all .3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.profile-pic:hover {
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 10000;
+    color: #fff;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+.profile-pic span {
+    display: inline-block;
+    padding-top: 4.5em;
+    padding-bottom: 4.5em;
+}
+
+form input[type="file"] {
+    display: none;
+    cursor: pointer;
+}
+
+
+
+/* SIGN UP CSS - CLA */
+#signup-title{
+   color: white;
+   text-shadow:
+    0 0 1px white,
+    0 0 2px white,
+    0 0 8px white,
+    0 0 20px white;
+    text-align: center;
+    width: auto;
+    margin-top: 3%;
+    padding: 2%;
+    height: -500%;
+    font-size: 400%;
+}
+
+
+
+/* FORM STYLES */
+
+.asterisk {
+  color: #00ffba;
+}
+
+.signup-info {
+  width: 500px; 
+  /* max-width: 400px; */  
+  margin: 0 auto;     
+}
+
+
+.form-label{
+    color: white;
+    font-size: 120%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+
+#signup-input {
+    color: #d6c1ff; 
+}
+
+.form-input {
+    width: 100%;
+    height: 40px;
+    border: none;                    
+    outline: none;                   
+    border-radius: 18px;
+    padding: 10px;
+    margin-bottom: 2%;
+    font-size: 100%;
+    background-color: #d6c1ffaa;
+    box-sizing: border-box;
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+
+.form-input:focus {
+    border: 2px solid #d6c1ffaa;         
+    background-color: #d6c1ffaa;
+    outline: none;
+}
+
+.submit-button {
+  text-align: center;
+  margin-top: 1.5%;
+  font-weight: 2000;
+}
+
+#form-submit {
+  letter-spacing: 1px;
+  width: 16%;           /* reduced from 17% */
+  height: 90%;          /* reduced from 100% */
+  padding: 10px 32px;   /* reduced padding */
+  border-radius: 30px;
+  background-color: #f87aff65;
+  color: white;
+  border: none;
+  font-weight: bolder;
+  font-size: 20px;      /* reduced font size */
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#form-submit:hover {
+  background-color: #bba3f2;
+  color: white;
+  box-shadow: 0 0 10px #bba3f2;
+}
+
+/* SIGN IN CSS - CLA */
+.signin-info {
+  font-size: 130%;
+  width: 500px; 
+  /* max-width: 400px; */  
+  margin: 0 auto;  
+  margin-top: 0.5%;   
+}
+
+.form-input2 {
+    width: 100%;
+    height: 55px;
+    border: none;                    
+    outline: none;                   
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 2%;
+    font-size: 100%;
+    background-color: #d6c1ffaa;
+    box-sizing: border-box;
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+
+.form-input2:focus {
+    border: 2px solid #d6c1ffaa;         
+    background-color: #d6c1ffaa;
+    outline: none;
+}
+
+.submit-button2 {
+  text-align: center;
+  margin-top: 2%;
+  font-weight: bolder;
+}
+
+#form-submit2 {
+  letter-spacing: 1px;
+  width: 11%;          
+  height: 100%;          
+  padding: 10px 30px;   
+  border-radius: 30px;
+  background-color: #f87aff65;
+  color: white;
+  border: none;
+  font-weight: bolder;
+  font-size: 20px;      
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#form-submit2:hover {
+  background-color: #bba3f2;
+  color: white;
+  box-shadow: 0 0 10px #bba3f2;
+}
+
+.create-account {
+    font-size: 17px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 4%;
+    color: #b1efff;
+}
+
+.create-account a {
+  color: #b1efff; /* or any color you like */
+  text-decoration: underline; 
+  font-weight: bold;     /* optional */
+  transition: color 0.3s ease;
+}
+
+.create-account a:hover {
+  color: #56747b; /* hover color */
+  text-decoration: underline; 
+}
+
     margin-top: 10vh;
 }
 

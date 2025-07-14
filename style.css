@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'AgrandirRegular';
+    src: url('assets/Agrandir - Free for Personal Use/Agrandir-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AgrandirThin';
+    src: url('assets/Agrandir - Free for Personal Use/Agrandir-Thin.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    font-family: 'AgrandirRegular', sans-serif;
+    background-image: url(assets/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #d9d9d9;
+}
+
+.main-window {
+    max-width: 85vw;
+    width: 100%;
+    height: 75vh;
+    margin: -2.5% auto;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    padding-bottom: 3%;
+    padding-right: 1%;
+}
+
+.nav-mt {
+    margin-top: 10vh;
+}

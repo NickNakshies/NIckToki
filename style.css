@@ -193,15 +193,15 @@ form input[type="file"] {
 
 #form-submit {
   letter-spacing: 1px;
-  width: 17%;
-  height: 100%;
-  padding: 12px 40px;
+  width: 16%;           /* reduced from 17% */
+  height: 90%;          /* reduced from 100% */
+  padding: 10px 32px;   /* reduced padding */
   border-radius: 30px;
   background-color: #f87aff65;
   color: white;
   border: none;
-  font-weight: 600;
-  font-size: 23px;
+  font-weight: bolder;
+  font-size: 20px;      /* reduced font size */
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -209,4 +209,82 @@ form input[type="file"] {
 #form-submit:hover {
   background-color: #bba3f2;
   color: white;
+  box-shadow: 0 0 10px #bba3f2;
+}
+
+/* SIGN IN CSS - CLA */
+.signin-info {
+  font-size: 130%;
+  width: 500px; 
+  /* max-width: 400px; */  
+  margin: 0 auto;  
+  margin-top: 0.5%;   
+}
+
+.form-input2 {
+    width: 100%;
+    height: 55px;
+    border: none;                    
+    outline: none;                   
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 2%;
+    font-size: 100%;
+    background-color: #d6c1ffaa;
+    box-sizing: border-box;
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+
+.form-input2:focus {
+    border: 2px solid #d6c1ffaa;         
+    background-color: #d6c1ffaa;
+    outline: none;
+}
+
+.submit-button2 {
+  text-align: center;
+  margin-top: 2%;
+  font-weight: bolder;
+}
+
+#form-submit2 {
+  letter-spacing: 1px;
+  width: 11%;          
+  height: 100%;          
+  padding: 10px 30px;   
+  border-radius: 30px;
+  background-color: #f87aff65;
+  color: white;
+  border: none;
+  font-weight: bolder;
+  font-size: 20px;      
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#form-submit2:hover {
+  background-color: #bba3f2;
+  color: white;
+  box-shadow: 0 0 10px #bba3f2;
+}
+
+.create-account {
+    font-size: 17px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 4%;
+    color: #b1efff;
+}
+
+.create-account a {
+  color: #b1efff; /* or any color you like */
+  text-decoration: underline; 
+  font-weight: bold;     /* optional */
+  transition: color 0.3s ease;
+}
+
+.create-account a:hover {
+  color: #56747b; /* hover color */
+  text-decoration: underline; 
 }

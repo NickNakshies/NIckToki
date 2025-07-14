@@ -19,6 +19,13 @@
     font-style: normal
 }
 
+@font-face {
+    font-family: 'AgrandirThin';
+    src: url('assets/Agrandir - Free For Personal Use/Agrandir-GrandHeavy.otf') format('opentype');
+    font-weight: bolder;
+    font-style: normal
+}
+
 body {
     font-family: 'AgrandirRegular', sans-serif;
     background-image: url(assets/background.png);

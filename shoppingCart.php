@@ -190,9 +190,7 @@ function proceedToPayment() {
         confirmButtonText: 'Continue'
     }).then((result) => {
         if (result.isConfirmed) {
-            // You can redirect to payment page here
-            // window.location.href = 'payment.php';
-            console.log('Redirecting to payment...');
+            window.location.href = 'checkout.php'; 
         }
     });
 }
@@ -250,7 +248,7 @@ function showToast(message, type) {
 }
 
 .checkout-content {
-  
+    width: 100%;
     background: rgba(0, 0, 0, 0.62);
     border-radius: 20px;
     padding: 30px;

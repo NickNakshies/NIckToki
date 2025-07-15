@@ -1,4 +1,5 @@
 <?php
+require_once 'validations/db_connection.php';
 require 'header.php';
 ?>
 
@@ -11,7 +12,7 @@ require 'header.php';
 
 <!-- SIGN IN FORM -->
 <div class="signin-form">
-  <form action="store.php" method="POST" id="signinForm">
+  <form action="validations/signin_process.php" method="POST" id="signinForm">
     <div class="signin-info">
       <label for="email" class="form-label">Email</label>
       <div class="signup-input">

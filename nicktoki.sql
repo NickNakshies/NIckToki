@@ -74,6 +74,7 @@ ALTER TABLE `cart`
   ADD KEY `user_id` (`user_id`),
   ADD KEY `item_id` (`item_id`);
 
+
 --
 -- Indexes for table `items`
 --

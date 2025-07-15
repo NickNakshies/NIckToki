@@ -1,4 +1,5 @@
 <?php
+require 'login_check.php';
 require 'header.php';
 ?>
 
@@ -246,7 +247,7 @@ function showToast(message, type) {
 }
 
 .checkout-content {
-  
+    width: 100%;
     background: rgba(0, 0, 0, 0.62);
     border-radius: 20px;
     padding: 30px;

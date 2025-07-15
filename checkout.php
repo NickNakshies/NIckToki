@@ -4,7 +4,7 @@
 
 <div class="checkout-container">
   <div class="payment-left">
-     <div class="scan-title" style="margin-left: 55%; margin-top: -20px;">
+     <div class="scan-title" style="margin-left: 74%; margin-top: -20px;">
       <span class="pay-scan-label">Pay Scan QR Here</span>
       <img src="assets/starscanqr.png" alt="Star" class="star-icon" style="margin-left: -2%;">
   </div>

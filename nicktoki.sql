@@ -136,6 +136,9 @@ INSERT INTO items (item_id, item_name, item_price, item_image) VALUES
 
 INSERT INTO users (user_id, user_name, user_email, user_pass, user_address, user_joindate, user_pic) VALUES
 (1, 'ADMIN', 'admin@gmail.com', '$2y$10$XlS4JypAFP/NlTueItdgRuDx/NonyaAw9/dCJzmHg37/CFfxuwh6y', '', '', '');
+/* email: admin@gmail.com
+   password: admin123*/
+
 
 ALTER TABLE `cart`
   ADD COLUMN `receipt_image` VARCHAR(255) DEFAULT NULL;

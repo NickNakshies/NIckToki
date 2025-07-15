@@ -99,6 +99,18 @@ require 'header.php';
             return;
         }
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const profileLink = document.querySelector('a.nav-link[href="profile.php"]');
+
+
+        if (profileLink && profileLink.querySelector('img')) {
+        const img = profileLink.querySelector('img');
+        img.src = 'assets/signinbtn.png';
+        img.style = 'width: auto; height: 24vh; margin-top:;';
+        }
+    });
+
 </script>
 
 <?php

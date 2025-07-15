@@ -67,6 +67,25 @@ document.getElementById('signinForm').addEventListener('submit', function(event)
     this.submit();
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const profileLink = document.querySelector('a.nav-link[href="profile.php"]');
+
+    if (profileLink && profileLink.querySelector('img')) {
+      const img = profileLink.querySelector('img');
+      img.src = 'assets/signupbtn.png';
+      img.style = 'width: auto; height: 24vh; margin-top:;';
+    }
+  });
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const profileLink = document.querySelector('a.nav-link[href="profile.php"]');
+    if (profileLink) {
+      profileLink.setAttribute('href', 'signup.php');
+    }
+  });
+
 </script>
 
 <?php

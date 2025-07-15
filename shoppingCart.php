@@ -4,7 +4,6 @@ require_once 'validations/db_connection.php';
 require 'header.php';
 ?>
 
-
 <div class="checkout-container">
     <div class="checkout-header">
         <h1>Checkout</h1>
@@ -19,7 +18,6 @@ require 'header.php';
                 <div class="header-item total-col">Total</div>
             </div>
             
-            <!-- Cart items will be loaded here by JavaScript -->
             <div id="checkout-cart-container">
                 <div class="empty-cart-msg">Your cart is empty.</div>
             </div>
@@ -37,182 +35,109 @@ require 'header.php';
     </div>
 </div>
 
-<!-- Include SweetAlert2 for better UX -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     loadCheckoutCart();
 });
 
-// Helper function to parse price string and convert to number
-function parsePrice(priceString) {
-    if (typeof priceString === 'number') {
-        return priceString;
-    }
-    
-    // Remove commas and convert to number
-    const cleanPrice = priceString.toString().replace(/,/g, '');
-    const numericPrice = parseFloat(cleanPrice);
-    
-    return isNaN(numericPrice) ? 0 : numericPrice;
-}
-
 function loadCheckoutCart() {
-    const products = JSON.parse(localStorage.getItem("cart")) || [];
-    const container = document.getElementById('checkout-cart-container');
-    
-    if (products.length === 0) {
-        container.innerHTML = '<div class="empty-cart-msg">Your cart is empty.</div>';
-        document.getElementById('checkout-total').textContent = '₱0';
-        return;
-    }
-    
-    let productHTML = '';
-    let grandTotal = 0;
-    
-    products.forEach((item, index) => {
-        // Parse the price to ensure it's a number
-        const itemPrice = parsePrice(item.price);
-        const itemQuantity = parseInt(item.quantity) || 1;
-        const itemTotal = itemPrice * itemQuantity;
-        
-        grandTotal += itemTotal;
-        
-        productHTML += `
-            <div class="checkout-item" data-index="${index}">
-                <div class="product-info">
-                    <img src="${item.image}" alt="${item.name}" class="product-image">
-                    <div class="product-details">
-                        <h4 class="product-name">${item.name}</h4>
-                        <button class="remove-link" onclick="removeFromCart(${index})">remove</button>
+    fetch('validations/fetchcartitems.php')
+    .then(response => response.json())
+    .then(cartItems => {
+        const container = document.getElementById('checkout-cart-container');
+        if (!cartItems.length) {
+            container.innerHTML = '<div class="empty-cart-msg">Your cart is empty.</div>';
+            document.getElementById('checkout-total').textContent = '₱0';
+            return;
+        }
+
+        let productHTML = '';
+        let grandTotal = 0;
+
+        cartItems.forEach((item, index) => {
+            const itemPrice = parseFloat(item.item_price);
+            const itemQuantity = parseInt(item.quantity);
+            const itemTotal = itemPrice * itemQuantity;
+            grandTotal += itemTotal;
+
+            productHTML += `
+                <div class="checkout-item" data-item-id="${item.item_id}">
+                    <div class="product-info">
+                        <img src="${item.item_image}" alt="${item.item_name}" class="product-image">
+                        <div class="product-details">
+                            <h4 class="product-name">${item.item_name}</h4>
+                            <button class="remove-link" onclick="removeFromCart(${item.item_id})">remove</button>
+                        </div>
                     </div>
+                    <div class="quantity-section">
+                        <button class="qty-btn minus" onclick="updateQuantity(${item.item_id}, -1)">-</button>
+                        <span class="quantity">${itemQuantity}</span>
+                        <button class="qty-btn plus" onclick="updateQuantity(${item.item_id}, 1)">+</button>
+                    </div>
+                    <div class="price-section">₱${itemPrice.toLocaleString()}</div>
+                    <div class="total-section">₱${itemTotal.toLocaleString()}</div>
                 </div>
-                <div class="quantity-section">
-                    <button class="qty-btn minus" onclick="updateQuantity(${index}, -1)">-</button>
-                    <span class="quantity">${itemQuantity}</span>
-                    <button class="qty-btn plus" onclick="updateQuantity(${index}, 1)">+</button>
-                </div>
-                <div class="price-section">₱${itemPrice.toLocaleString()}</div>
-                <div class="total-section">₱${itemTotal.toLocaleString()}</div>
-            </div>
-        `;
-    });
-    
-    container.innerHTML = productHTML;
-    document.getElementById('checkout-total').textContent = `₱${grandTotal.toLocaleString()}`;
-}
-
-function updateQuantity(index, change) {
-    let products = JSON.parse(localStorage.getItem("cart")) || [];
-    
-    if (products[index]) {
-        const currentQuantity = parseInt(products[index].quantity) || 1;
-        const newQuantity = currentQuantity + change;
-        
-        if (newQuantity <= 0) {
-            products.splice(index, 1);
-        } else {
-            products[index].quantity = newQuantity;
-        }
-        
-        localStorage.setItem("cart", JSON.stringify(products));
-        loadCheckoutCart();
-        
-        // Show success message
-        if (change > 0) {
-            showToast('Quantity increased!', 'success');
-        } else if (newQuantity > 0) {
-            showToast('Quantity decreased!', 'info');
-        }
-    }
-}
-
-function removeFromCart(index) {
-    let products = JSON.parse(localStorage.getItem("cart")) || [];
-    
-    if (products[index]) {
-        const itemName = products[index].name;
-        
-        Swal.fire({
-            title: 'Remove Item?',
-            text: `Are you sure you want to remove "${itemName}" from your cart?`,
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#8B5CF6',
-            cancelButtonColor: '#6B7280',
-            confirmButtonText: 'Yes, remove it!',
-            background: '#1F2937',
-            color: '#F3F4F6'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                products.splice(index, 1);
-                localStorage.setItem("cart", JSON.stringify(products));
-                loadCheckoutCart();
-                
-                Swal.fire({
-                    title: 'Removed!',
-                    text: `${itemName} has been removed from your cart.`,
-                    icon: 'success',
-                    timer: 1500,
-                    showConfirmButton: false,
-                    background: '#1F2937',
-                    color: '#F3F4F6'
-                });
-            }
+            `;
         });
-    }
+
+        container.innerHTML = productHTML;
+        document.getElementById('checkout-total').textContent = `₱${grandTotal.toLocaleString()}`;
+    });
+}
+
+function updateQuantity(itemId, change) {
+    fetch('validations/updatecartquantity.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `item_id=${itemId}&change=${change}`
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.status === 'success') {
+            loadCheckoutCart();
+        }
+    });
+}
+
+function removeFromCart(itemId) {
+    Swal.fire({
+        title: 'Remove Item?',
+        text: 'Are you sure you want to remove this item from your cart?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#8B5CF6',
+        cancelButtonColor: '#6B7280',
+        confirmButtonText: 'Yes, remove it!'
+    }).then(result => {
+        if (result.isConfirmed) {
+            fetch('validations/removecartitem.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `item_id=${itemId}`
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    loadCheckoutCart();
+                    Swal.fire('Removed!', 'Item has been removed.', 'success');
+                }
+            });
+        }
+    });
 }
 
 function proceedToPayment() {
-    const products = JSON.parse(localStorage.getItem("cart")) || [];
-    
-    if (products.length === 0) {
-        Swal.fire({
-            title: 'Cart Empty',
-            text: 'Please add some products to your cart before proceeding to payment.',
-            icon: 'warning',
-            background: '#1F2937',
-            color: '#F3F4F6',
-            confirmButtonColor: '#8B5CF6'
-        });
-        return;
-    }
-    
-    // Redirect to payment page or show success message
     Swal.fire({
         title: 'Proceed to Payment',
         text: 'You will be redirected to the payment page.',
         icon: 'success',
-        background: '#1F2937',
-        color: '#F3F4F6',
-        confirmButtonColor: '#8B5CF6',
-        confirmButtonText: 'Continue'
-    }).then((result) => {
+        confirmButtonText: 'Continue',
+        confirmButtonColor: '#8B5CF6'
+    }).then(result => {
         if (result.isConfirmed) {
-            window.location.href = 'checkout.php'; 
+            window.location.href = 'checkout.php';
         }
-    });
-}
-
-function showToast(message, type) {
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 1500,
-        timerProgressBar: true,
-        background: '#1F2937',
-        color: '#F3F4F6',
-        didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-    });
-    
-    Toast.fire({
-        icon: type,
-        title: message
     });
 }
 </script>

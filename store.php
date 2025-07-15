@@ -19,7 +19,7 @@ require 'header.php';
 <section class="item-boxes" id="item-boxes">
 
     <!-- Item 1 -->
-    <div class="card" id="item-1" >
+    <div class="card" id='1' >
         <img class="main-image" src="./assets/card1.png" alt="Main Item Box">
         
         <!-- Hidden description for Blue Wave Build -->
@@ -49,7 +49,7 @@ require 'header.php';
     </div>
 
     <!-- Item 2 -->
-    <div class="card scroll-offset" id="item-2">
+    <div class="card scroll-offset" id='2'>
         <img class="main-image" src="./assets/card2 (1).png" alt="Main Item Box">
         
         <!-- Hidden description for Mobo Combo -->
@@ -74,7 +74,7 @@ require 'header.php';
     </div>
 
     <!-- Item 3 -->
-    <div class="card" id="item-3">
+    <div class="card" id='3'>
         <img class="main-image" src="./assets/card3.png" alt="Main Item Box">
         
         <!-- Hidden description for KM Set -->
@@ -98,7 +98,7 @@ require 'header.php';
     </div>
 
     <!-- Item 4 -->
-    <div class="card" id="item-4">
+    <div class="card" id="4">
         <img class="main-image" src="./assets/card4.png" alt="Main Item Box">
         
         <!-- Hidden description for Store It Bundle -->
@@ -122,7 +122,7 @@ require 'header.php';
     </div>
 
     <!-- Item 5 -->
-    <div class="card" id="item-5">
+    <div class="card" id="5">
         <img class="main-image" src="./assets/card5.png" alt="Main Item Box">
         
         <!-- Hidden description for The Ultimate -->
@@ -150,10 +150,6 @@ require 'header.php';
     </div>
 
 </section>
-<?php
-require 'footer.php';
-?>
-
 
 <script>
 let scrollY = 0; // Store scroll position globally
@@ -170,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const itemName = this.querySelector("h3")?.textContent || "Unnamed Item";
             const itemDescription = this.querySelector("p")?.textContent || "No description available.";
             const itemPrice = this.querySelector(".price-button span")?.textContent || "0.00";
-            const itemId = this.id;
+            const itemId = this.id;  // Make sure your card elements have id=item_id from DB
 
             // Get the item description
             const descriptionElement = this.querySelector(".item-description");
@@ -260,29 +256,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     popup: "custom-swal-popup-exact"
                 },
                 didOpen: () => {
-                    // Add to Cart button functionality
+                    // Add to Cart button calls PHP backend
                     document.querySelector("#add-to-cart-btn").addEventListener("click", function () {
-                        addToCart(itemName, imageSrc, itemPrice);
+                        addToCart(itemId, itemName);
                         Swal.close();
-
-                        setTimeout(() => {
-                            Swal.fire({
-                                title: "Item Added to Cart!",
-                                text: `${itemName} has been added to your cart.`,
-                                icon: "success",
-                                confirmButtonText: "OK",
-                                confirmButtonColor: "#0003c1ff"
-                            }).then(() => {
-                                restoreScroll();
-                            });
-                        }, 200);
                     });
 
-                    // Purchase Now button functionality
+                    // Purchase Now button functionality (you can expand this)
                     document.querySelector("#purchase-now-btn").addEventListener("click", function () {
-                        // Add your purchase logic here
                         Swal.close();
-                        
                         setTimeout(() => {
                             Swal.fire({
                                 title: "Redirecting to Checkout...",
@@ -292,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 confirmButtonColor: "#8b5cf6"
                             }).then(() => {
                                 restoreScroll();
-                                // Add redirect to checkout page here
+                                // Redirect to checkout page here:
                                 // window.location.href = '/checkout';
                             });
                         }, 200);
@@ -306,19 +288,16 @@ document.addEventListener("DOMContentLoaded", function () {
                         this.style.background = "#4f46e5";
                         this.style.transform = "scale(1.05)";
                     });
-                    
                     addToCartBtn.addEventListener("mouseleave", function() {
-                        this.style.background = "#6366f1";
+                        this.style.background = "#24709f";
                         this.style.transform = "scale(1)";
                     });
-                    
                     purchaseBtn.addEventListener("mouseenter", function() {
                         this.style.background = "#7c3aed";
                         this.style.transform = "scale(1.05)";
                     });
-                    
                     purchaseBtn.addEventListener("mouseleave", function() {
-                        this.style.background = "#8b5cf6";
+                        this.style.background = "#84579c";
                         this.style.transform = "scale(1)";
                     });
                 },
@@ -331,57 +310,39 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function restoreScroll() {
-    console.log("Restoring Scroll Position:", scrollY);
-    
-    // Restore body scroll
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
-    
-    // Restore scroll position
     window.scrollTo(0, scrollY);
-    
-    console.log("Scroll Restored!");
 }
 
-function addToCart(itemName, imageSrc, itemPrice) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    // Check if item already exists in cart
-    let existingItem = cart.find(item => item.name === itemName);
-
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({
-            name: itemName,
-            image: imageSrc,
-            price: itemPrice,
-            quantity: 1
-        });
-    }
-    
-    localStorage.setItem("cart", JSON.stringify(cart));
-    
-    if (typeof renderCart === "function") {
-        renderCart();
-    }
-}
-
-
- document.querySelectorAll(".card").forEach(card => {
-        card.addEventListener("click", () => {
-            const itemName = card.querySelector("h3").innerText;
-            const itemPrice = parseInt(card.querySelector(".price-button span").innerText.replace(/,/g, ''));
-
-            fetch("insert_item.php", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: `item_name=${encodeURIComponent(itemName)}&item_price=${itemPrice}`
-            })
-            .then(response => response.text())
-            .then(data => alert(data));
-        });
+function addToCart(itemId, itemName) {
+    fetch('validations/addtocart.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `item_id=${encodeURIComponent(itemId)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            Swal.fire({
+                title: "Item Added to Cart!",
+                text: `${itemName} has been added to your cart.`,
+                icon: "success",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#0003c1ff"
+            });
+            // Optionally refresh cart display here
+        } else {
+            Swal.fire("Error", data.message || "Failed to add item to cart.", "error");
+        }
+    })
+    .catch(() => {
+        Swal.fire("Error", "Could not connect to server.", "error");
     });
-
+}
 </script>
+
+<?php
+require 'footer.php';
+?>

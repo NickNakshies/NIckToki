@@ -134,9 +134,8 @@ INSERT INTO items (item_id, item_name, item_price, item_image) VALUES
 (4, 'Store It Bundle', 8500, 'assets/card4.png'),
 (5, 'The Ultimate', 145892, 'assets/card5.png');
 
-
-TRUNCATE TABLE users;
 INSERT INTO users (user_id, user_name, user_email, user_pass, user_address, user_joindate, user_pic) VALUES
-(1, 'ADMIN', 'admin@gmai.com', 'admin123', '', '2023-01-01', ''),
+(1, 'ADMIN', 'admin@gmail.com', '$2y$10$XlS4JypAFP/NlTueItdgRuDx/NonyaAw9/dCJzmHg37/CFfxuwh6y', '', '', '');
 
-
+ALTER TABLE `cart`
+  ADD COLUMN `receipt_image` VARCHAR(255) DEFAULT NULL;

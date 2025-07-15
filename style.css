@@ -56,6 +56,12 @@ body {
     margin-top: 10vh;
 }
 
+/* ======================================================== CHECKOUT ============================================================================ */
+ h2 {
+    font-size: 40px;
+    margin: 40px 0 0 40px;
+    color: #ffffff;
+  }
 
 /* =============================================== CART CSS ===============================================*/
 .product-header {
@@ -85,167 +91,105 @@ body {
   margin-top: 30px;
 }
 
-.checkout-container {
-  max-width: 1500px;
-  margin: 60px auto;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.product-list, .payment-box {
-height:530px;
-background: rgba(0, 0, 0, 0.4);
-  border-radius: 25px;
-  padding: 30px;
-  flex: 1;
-  margin-bottom:50px;
-}
-
-h2 {
-  font-size: 50px;
-  margin-top: 70px;
-  margin-left: 40px;
-  margin-bottom: -50px;
-  color: #ffffff;
-}
-
-.product-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.product-label {
+  .checkout-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 30px;
+  }
+ .scan-title {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 2px; 
+  width: 100%;
 }
-
-.h3{
-   text-align: center; 
-   color:#ffffff;
-}
-
-.product-label img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.price {
+.pay-scan-label {
+  font-size: 20px;
   font-weight: bold;
+  margin-right: 5px; 
 }
 
-.total-line {
-  border-top: 1px solid rgba(255,255,255,0.3);
-  margin: 20px 0;
+.star-icon {
+  height: 70px;
+  width: auto;
 }
+.payment-left{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  .payment-left .accepted-text {
+    font-size: 14px;
+    margin: 10px 0 5px;
+  }
 
-.total {
-  font-size: 18px;
-}
+  .payment-left .logos {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
 
-.scan-accept-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  align-items: flex-start;
-  margin-bottom: 70px;
-}
+  .payment-left .accepted-text {
+    font-size: 14px;
+    margin-top:-20px;
+  }
 
-.scan-label {
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-.accept.text {
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-.scan-column, .accept-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-}
+  .payment-left .title {
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 
-.scanqr {
-  height:200px;
-  width:auto;
-  margin-top:-50px;
-}
+  .payment-left .title img {
+    height: 18px;
+  }
 
-.accept-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.qrph-logo {
-  height: 200px;
-  width:auto;
-  margin-bottom: -50px;
-  margin-top: -90px;
-}
-
-.logos {
-margin-top:-20px;
+/* ========================== CHECKOUT RIGHT SECTION ========================== */
+.image-container {
+  height: 300px;  
+  width: auto;         
   display: flex;
   justify-content: center;
-  gap: 15px; 
-  flex-wrap: nowrap; 
-}
-
-.logos img {
-  height: 40px;
-  width: auto;
-
-}
-.upload-section {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  background-color: rgba(202, 142, 242, 0.41);
-  padding: 40px;
-  border-radius: 30px;
-  text-align: center;
-  width: auto;
-  margin-bottom: 100px;
-  margin-top:-100px;
+  overflow: hidden;  
 }
 
-.upload-icon {
-  width: auto;
-  height: 180px;
-  margin-bottom: -30px;
-  margin-top:-40px;
+#receipt-preview {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 
-.upload-label p {
-  font-size: 30px;
-  cursor: pointer;
-  text-decoration: underline;
-  color: #ffffff;
-  margin: 0;
+.payment-right {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.upload-section small {
+.upload-label {
   display: block;
-  margin-bottom: 15px;
-  color: #ffffff;
-}
-.scanqr {
-  cursor: pointer;
-}
-.swal2-popup.qrph-popup {
-  border-radius: 20px;
-}
-#receipt {
-  display: none;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
+.upload-box small {
+  display: block;
+  margin-bottom: 10px;
+  color: #666;
+}
+/* ======================================================== END CHECKOUT ============================================================================ */
 /* =============================================== CART CSS ===============================================*/
 
 

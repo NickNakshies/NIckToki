@@ -1,5 +1,6 @@
 <?php
-
+require 'validations/login_check.php';
+require_once 'validations/db_connection.php';
 require 'header.php';
 ?>  
 

@@ -1,4 +1,5 @@
 <?php
+require_once 'validations/db_connection.php';
 require 'header.php';
 ?>
 
@@ -11,7 +12,7 @@ require 'header.php';
 
 <!-- SIGN UP FORM -->
 <div>
-    <form action="signin.php" method="POST" id="signupForm">
+    <form action="validations/signup_process.php" method="POST" id="signupForm">
         <div class="signup-info"> 
             <!-- NAME FORM -->
             <label for="full-name" class="form-label">

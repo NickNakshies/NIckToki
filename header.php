@@ -58,7 +58,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/Profile/profile.html">
+                    <a class="nav-link" href="profile.php">
                         <img src="assets/signupbtn.png" style="width: auto; height: 24vh; margin-top:;"/>
                     </a>   
                 </li>

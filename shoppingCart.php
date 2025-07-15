@@ -188,9 +188,7 @@ function proceedToPayment() {
         confirmButtonText: 'Continue'
     }).then((result) => {
         if (result.isConfirmed) {
-            // You can redirect to payment page here
-            // window.location.href = 'payment.php';
-            console.log('Redirecting to payment...');
+            window.location.href = 'checkout.php'; 
         }
     });
 }

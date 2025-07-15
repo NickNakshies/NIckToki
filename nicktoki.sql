@@ -124,3 +124,19 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+ALTER TABLE items ADD item_image VARCHAR(255) NOT NULL;
+
+INSERT INTO items (item_id, item_name, item_price, item_image) VALUES
+(1, 'Blue Wave Build', 46515, 'assets/card1.png'),
+(2, 'Mobo Combo', 14500, 'assets/card2 (1).png'),
+(3, 'KM Set', 7459, 'assets/card3.png'),
+(4, 'Store It Bundle', 8500, 'assets/card4.png'),
+(5, 'The Ultimate', 145892, 'assets/card5.png');
+
+
+TRUNCATE TABLE users;
+INSERT INTO users (user_id, user_name, user_email, user_pass, user_address, user_joindate, user_pic) VALUES
+(1, 'ADMIN', 'admin@gmai.com', 'admin123', '', '2023-01-01', ''),
+
+

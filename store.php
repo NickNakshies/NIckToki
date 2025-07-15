@@ -19,7 +19,7 @@ require 'header.php';
 <section class="item-boxes" id="item-boxes">
 
     <!-- Item 1 -->
-    <div class="card" id="item-1">
+    <div class="card" id="item-1" >
         <img class="main-image" src="./assets/card1.png" alt="Main Item Box">
         
         <!-- Hidden description for Blue Wave Build -->
@@ -150,7 +150,6 @@ require 'header.php';
     </div>
 
 </section>
-
 <?php
 require 'footer.php';
 ?>
@@ -368,4 +367,21 @@ function addToCart(itemName, imageSrc, itemPrice) {
         renderCart();
     }
 }
+
+
+ document.querySelectorAll(".card").forEach(card => {
+        card.addEventListener("click", () => {
+            const itemName = card.querySelector("h3").innerText;
+            const itemPrice = parseInt(card.querySelector(".price-button span").innerText.replace(/,/g, ''));
+
+            fetch("insert_item.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `item_name=${encodeURIComponent(itemName)}&item_price=${itemPrice}`
+            })
+            .then(response => response.text())
+            .then(data => alert(data));
+        });
+    });
+
 </script>

@@ -49,7 +49,9 @@
 
 <!-- Button -->
 <button 
-  style="background-color: rgba(56, 182, 255, 0.41); border-radius: 30px; border: none; color: white; padding: 10px 20px; cursor: pointer; margin-top:28px;"
+  style="background-color: rgba(56, 182, 255, 0.41); border-radius: 30px; border: none; color: white; padding: 10px 20px; cursor: pointer; margin-top:28px; transition: background-color 0.3s ease, transform 0.2s ease;" 
+  onmouseover="this.style.backgroundColor='rgba(56,182,255,0.7)'; this.style.transform='scale(1.05)';" 
+  onmouseout="this.style.backgroundColor='rgba(56,182,255,0.41)'; this.style.transform='scale(1)';" 
   onclick="placeOrder()"
 >
   Place Order

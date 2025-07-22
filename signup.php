@@ -47,10 +47,10 @@ require 'header.php';
         <!-- PHONE NUMBER FORM -->
         <div class="signup-info">
             <label for="phone-number" class="form-label">
-                Phone Number
+                Address
             </label>
             <div class="signup-input">
-                <input type="tel" name="phone_number" class="form-input" id="phone-number" placeholder=" ">
+                <input type="text" name="address" class="form-input" id="address" placeholder=" ">
             </div>
         </div>
 
@@ -69,7 +69,7 @@ require 'header.php';
         const fullName = document.getElementById('full-name').value.trim();
         const email = document.getElementById('email').value.trim();
         const password = document.getElementById('password').value;
-        const phone = document.getElementById('phone-number').value.trim();
+        const address = document.getElementById('address').value.trim();
 
         // Basic full name validation
         if (fullName.length < 2) {
@@ -93,8 +93,8 @@ require 'header.php';
         }
 
         // Optional: phone number format validation (basic)
-        if (phone && !/^\+?[0-9\s\-]{7,15}$/.test(phone)) {
-            alert('Please enter a valid phone number.');
+        if (address && !/^\+?[0-9\s\-]{715}$/.test(phone)) {
+            alert('Please enter a valid address.');
             e.preventDefault();
             return;
         }

@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $full_name = trim($_POST['full_name']);
     $email = trim($_POST['email']);
     $password = $_POST['password'];
-    $phone = trim($_POST['phone_number']); // ← optional, we'll map this to user_address
+    $address = trim($_POST['address']); // ← optional, we'll map this to user_address
     $join_date = date("Y-m-d");
 
     // ✅ Basic validation
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // ✅ Insert new user (user_pic set to default blank for now)
     $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_pass, user_address, user_joindate, user_pic) VALUES (?, ?, ?, ?, ?, '')");
-    $stmt->bind_param("sssss", $full_name, $email, $hashed_password, $phone, $join_date);
+    $stmt->bind_param("sssss", $full_name, $email, $hashed_password, $address, $join_date);
 
     if ($stmt->execute()) {
         header("Location: ../signin.php");

@@ -134,8 +134,11 @@ INSERT INTO items (item_id, item_name, item_price, item_image) VALUES
 (4, 'Store It Bundle', 8500, 'assets/card4.png'),
 (5, 'The Ultimate', 145892, 'assets/card5.png');
 
-INSERT INTO users (user_id, user_name, user_email, user_pass, user_address, user_joindate, user_pic) VALUES
-(1, 'ADMIN', 'admin@gmail.com', '$2y$10$XlS4JypAFP/NlTueItdgRuDx/NonyaAw9/dCJzmHg37/CFfxuwh6y', '', '', '');
+ALTER TABLE users
+MODIFY user_pic VARCHAR(255) NOT NULL DEFAULT 'default_profile.webp';
+
+INSERT INTO users (user_id, user_name, user_email, user_pass, user_address, user_joindate) VALUES
+(1, 'ADMIN', 'admin@gmail.com', '$2y$10$XlS4JypAFP/NlTueItdgRuDx/NonyaAw9/dCJzmHg37/CFfxuwh6y', '21 B Palyokan West Batangas City', '2025-7-15');
 /* email: admin@gmail.com
    password: admin123*/
 

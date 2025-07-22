@@ -16,7 +16,7 @@ $user = $result->fetch_assoc();
 </div>
 
 <div class="container mt-5 overflow-scroll profile-window">
-<form id="formValidate" action="save_profile.php" method="POST" enctype="multipart/form-data">
+<form id="formValidate" action="validations/save_profile.php" method="POST" enctype="multipart/form-data">
     <div class="row p-1 ms-1">
         <div class="col-lg-3 ms-4 mt-5">
             <label for="file">
